@@ -1,0 +1,65 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title></title>
+    <link href='http://fonts.googleapis.com/css?family=Noto+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="~/Content/style.css">
+    <link rel="shortcut icon" type="~/Image/x-icon" href="~/Images/favicon.ico" />
+</head>
+<body>
+<div id="dashboard">
+    <header id="header" style="display: none;">
+    </header>
+    <main role="main" id="main">
+        <div class="container-fluid">
+            <div class="row active">
+                <a href="#" class="triggerBtn glyphicon glyphicon-chevron-left"></a>
+                <div class="navColumn pull-left">
+                	<ul id="ISVListing" class="nav nav-pills nav-stacked">
+                	</ul>
+                </div>
+                <div class="testDriveArea pull-right" id="ISVTestDriveListing">
+            		<iframe id="ISVDrives" src="about:blank" frameborder="0" style="overflow:hidden;height:100%;width:100%" height="100%" width="100%"></iframe>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer id="footer" style="display: none;">
+    </footer>
+</div>    
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/app")
+
+<script>
+    $(document).ready(function () {
+        loader();
+        getAllISV();
+        triggerShowHide();
+        // rightPosition();
+
+	    $('iframe').each(function(){
+	        function injectCSS(){
+	            $iframe.contents().find('head').append(
+                    $('<link/>', { rel: 'stylesheet', href: '/Content/iframe.css', type: 'text/css' }),
+	                $('<script/>', { href: '/Scripts/iframe.js', type: 'text/script' })
+	            );
+	        }
+
+	        var $iframe = $(this);
+	        $iframe.on('load',function(){
+	            injectCSS();
+	        });
+	        injectCSS();
+	    });
+    });
+</script>
+</body>
+</html>

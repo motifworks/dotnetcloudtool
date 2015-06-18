@@ -1,0 +1,94 @@
+﻿<div class="row" id="mainRow">
+    <div class="col-md-12">
+        <div class="container-fluid">
+            <div class="introduction" id="divIntroductionHTML" style="display:none">
+            </div>
+            <div class="fromContainer" id="divForm" style="display:none">
+                <form action="/Home/Index" method="post" class="" role="form" id="setupForm">
+                    <input type="hidden" value="@ViewBag.TestDriveId" name="TestDriveId" id="TestDriveId" />
+                    <div class="form-group">
+                        <label for="UserName">NAME--CHANGE</label>
+                        <input type="text" name="UserName" class="form-control" id="UserName" placeholder="John Smith" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="CompanyName">Company</label>
+                        <input type="text" name="CompanyName" class="form-control" id="CompanyName" placeholder="ABC Inc." required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="Email">Email</label>
+                        <input type="email" name="Email" class="form-control" id="Email" placeholder="john.smith@abc.com" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="ContactNumber">Contact No.</label>
+                        <input type="tel" name="ContactNumber" class="form-control" id="ContactNumber" required>
+                    </div>
+                    <input type="hidden" value="" name="IPAddress" id="IPAddress" />
+                    <div class="form-group formInfo" id="divLabInfo1">
+                    </div>
+                    <div class="form-group formPurpose" id="divLabInfo2">
+                    </div>
+
+                    <div class="form-group">
+                        <!-- Button -->
+                        <div class="controls clearfix">
+                            <button type="submit" class="btn btn-success pull-left" id="btnSubmit"></button>
+                            <div class="poweredBy pull-right">
+                                <span class="text">Powered by | </span>
+                                <a href="http://www.motifworks.com" target="_blank" class="motifworks"></a>
+                            </div>
+                        </div>
+
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
+<div class="row notify-row" id="divHowItWorks" style="display:none">
+    <div class="col-md-12">
+        <div class="container-fluid">
+            <h2 style="line-height:0.25">How it Works?</h2>
+        </div>
+        <div class="container-fluid">
+            <div class="notify clearfix">
+                <div class="col-md-7">
+                    <ol>
+                        <li id="divProgressDetails">
+                        </li>
+                    </ol>
+                </div>
+                <div class="col-md-5">
+                    <ol start="2">
+                        <li id="divMailDetails">
+                        </li>
+                    </ol>
+                </div>
+            </div>
+<!--             <div class="aboutMW clearfix" id="divAbout">
+            </div> -->
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="http://l2.io/ip.js?var=myip"></script>
+<script>
+    $(document).ready(function () {
+        loader();
+        setIPAddress();
+        renderTestDriveDetails(@ViewBag.TestDriveId);
+        $('#setupForm').validator();
+    });
+
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date(); a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-33818264-3', 'auto');
+    ga('send', 'pageview');
+</script>

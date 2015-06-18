@@ -1,0 +1,16 @@
+#header {
+	width: 100%;
+	position: fixed;
+	top: 0;
+	z-index: 100;
+}
+#footer {
+	width: 100%;
+	position: fixed;
+	bottom: 0;
+	z-index: 100;
+	display: none !important;
+}
+#main {
+	padding: 65px 0 0;
+}

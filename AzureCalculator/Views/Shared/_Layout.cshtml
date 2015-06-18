@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Test Drive on Azure IaaS - Powered by Motifworks</title>
+    <link href='http://fonts.googleapis.com/css?family=Noto+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="shortcut icon" type="~/Image/x-icon" href="~/Images/favicon.ico" />
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <script type="text/javascript">
+        var appInsights=window.appInsights||function(config){
+            function s(config){t[config]=function(){var i=arguments;t.queue.push(function(){t[config].apply(t,i)})}}var t={config:config},r=document,f=window,e="script",o=r.createElement(e),i,u;for(o.src=config.url||"//az416426.vo.msecnd.net/scripts/a/ai.0.js",r.getElementsByTagName(e)[0].parentNode.appendChild(o),t.cookie=r.cookie,t.queue=[],i=["Event","Exception","Metric","PageView","Trace"];i.length;)s("track"+i.pop());return config.disableExceptionTracking||(i="onerror",s("_"+i),u=f[i],f[i]=function(config,r,f,e,o){var s=u&&u(config,r,f,e,o);return s!==!0&&t["_"+i](config,r,f,e,o),s}),t
+        }({
+            instrumentationKey:"75095fa3-0cc5-4d1f-b2df-e5a4373219bd"
+        });
+        
+        window.appInsights=appInsights;
+        appInsights.trackPageView();
+    </script>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</head>
+<body>
+    <div class="mainWrapper">
+        <div class="navbar navbar-inverse navbar-fixed-top" id="header" style="display: none;">
+            <div class="container-fluid" style="text-align:center;padding:2px">
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li class="pull-left"><a href="/" style="padding: 0px;" id="ISVLink" target="_blank"><img id="imgLogo" src="" alt=""></a></li>
+                    </ul>
+                    <div class="testDriveLogo pull-right"><img id="testDriveLogo" style="cursor:pointer;"/></div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid body-content">
+            @RenderBody()
+        </div>
+    </div>
+    <footer id="footer" class="clearfix" style="/*display: none;*/">
+        <div class="container-fluid">
+            <div class="aboutMW" id="divAbout"></div>
+            <aside class="powered">
+                <span class="text">Powered by | </span>
+                <a href="http://www.motifworks.com/" target="_blank" class="motifworks"></a>
+            </aside>
+        </div>
+    </footer>
+    @Scripts.Render("~/bundles/app")
+    <script>
+    // $(document).ready(function() {
+    //     renderTestDriveDetails(@ViewBag.TestDriveId);
+    // });
+    </script>
+</body>
+</html>

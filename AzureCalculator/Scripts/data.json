@@ -1,0 +1,44 @@
+{
+    "company": {
+        "name": "WWR Test Drive",
+        "image": "../Images/wwr_logo.png",
+        "testDrives": [
+            {
+                "name": "SharePoint farm",
+                "image": "../Images/ms_sharepoint.png",
+                "url": "http://sharepoint.azuretestdrive.com",
+                "toolTips": "SharePoint farm"
+            },
+            {
+                "name": "SQL Server",
+                "image": "../Images/ms_sql_azure.png",
+                "url": "http://ms_sql_azure.azuretestdrive.com",
+                "toolTips": "SQL Server"
+            },
+            {
+                "name": "Exchange Server 2013",
+                "image": "../Images/ms_exchange.png",
+                "url": "http://ms_exchange.azuretestdrive.com",
+                "toolTips": "Exchange Server 2013"
+            },
+            {
+                "name": "BizTalk Server",
+                "image": "../Images/ms_biztalk.png",
+                "url": "http://ms_biztalk.azuretestdrive.com",
+                "toolTips": "BizTalk Server"
+            },
+            {
+                "name": "Windows Server 2008 R2",
+                "image": "../Images/ms_ws2008R2.png",
+                "url": "http://ms_ws2008R2.azuretestdrive.com",
+                "toolTips": "Windows Server 2008 R2"
+            },
+            {
+                "name": "Windows Server 2012",
+                "image": "../Images/ms_ws2012.png",
+                "url": "http://ms_ws2012.azuretestdrive.com",
+                "toolTips": "Windows Server 2012"
+            }
+        ]
+    }
+}
